@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-button>
+    <ion-title>Ajouter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form (ngSubmit)="addProduct()" class="form" [formGroup]="productForm">
+
+  <ion-item>
+    <ion-label for="image">Image </ion-label>
+    <ion-input type="img" placeholder="Image" formControlName="image">
+      <ion-img></ion-img>
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="nom">Nom </ion-label>
+    <ion-input type="type" placeholder="Nom" formControlName="nom"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="prix">Prix </ion-label>
+    <ion-input type="number" placeholder="prix" formControlName="prix"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="taille">taille </ion-label>
+    <ion-input type="number" placeholder="taille" formControlName="taille"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="description">Description </ion-label>
+    <ion-input type="text" placeholder="Description" formControlName="description"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="statut">Statut </ion-label>
+    <ion-input type="text" placeholder="Statut" formControlName="statut"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="categorie">Catégorie </ion-label>
+    <ion-input type="text" placeholder="Categorie" formControlName="categorie"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="couleur">Couleur </ion-label>
+    <ion-input type="text" placeholder="Couleur" formControlName="couleur"></ion-input>
+  </ion-item>
+
+    <ion-button type="submit"  color="danger">Soumettre</ion-button>
+
+</form>
+</ion-content>

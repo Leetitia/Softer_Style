@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      SOFTERSTYLE
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding [fullscreen]="true">
+<ion-list>
+  <button ion-item *ngFor="let article of articles" (click)="goTo(article.id)">
+    <ion-item>
+    <ion-thumbnail item-start slot="start">
+      <img src="qwerty" [src]="article.image">
+    </ion-thumbnail>
+    <ion-label>
+    <h1>{{article.nom}}</h1>
+    <h5>{{article.description}}</h5>
+    <h3>{{article.prix | currency}}</h3>
+    <p>
+      <span *ngIf="article.prix <=10" style="color: rgb(16, 193, 247); text-align: center;">
+         Solde
+      </span>
+    </p>
+  </ion-label>
+  </ion-item>
+  </button>
+</ion-list>
+</ion-content>
+
+
+<ion-footer background="blue" (click)="goToNew()">
+  <!-- <ion-row>
+    <ion-col offset-1 col-10> -->
+      <!-- <ion-back-button></ion-back-button> -->
+      <ion-button shape="round" large color="danger" expand="block" (click)="goToNew()">
+        <ion-icon name="camera"></ion-icon>
+        Ajouter des vetements
+      </ion-button>
+    <!-- </ion-col>
+  </ion-row> -->
+</ion-footer>

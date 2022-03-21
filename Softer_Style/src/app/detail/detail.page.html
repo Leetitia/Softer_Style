@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-button>
+    <ion-title>Détails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding [fullscreen]="true">
+  <ion-card-content>
+    <ion-item>
+      <ion-button color="danger" slot="end" large shape="round">Supprimer</ion-button>
+    </ion-item>
+  <ion-slides pager="true" autoplay="1000" loop="true">
+    <ion-slide>
+      <img src="qwerty" [src]="productDetail.image">
+    </ion-slide>
+  </ion-slides>
+</ion-card-content>
+ <ion-card-content color="primary">
+   <ion-chip>
+     Taille: {{productDetail.taille}}
+   </ion-chip>
+   <ion-chip>
+    Statut: {{productDetail.infoSup.statut}}
+  </ion-chip>
+ </ion-card-content>
+ <ion-card-content>
+  <ion-chip color="primary">
+    Catégorie:{{productDetail.infoSup.categorie}}
+  </ion-chip>
+  <ion-chip>
+    Couleur:{{productDetail.infoSup.couleur}}
+  </ion-chip>
+</ion-card-content>
+<ion-card-content>
+  <h1>Prix: {{productDetail.prix | currency}}</h1>
+</ion-card-content>
+<ion-card-content>
+   <h2> Description</h2>
+   <p>{{productDetail.description}}</p>
+</ion-card-content>
+</ion-content>
+<ion-footer background="white">
+  <ion-row>
+    <ion-col offset-1 col-10>
+      <ion-button ion-button shape="round" large color="danger" expand="block">
+        <ion-icon name="cart" slot="start"></ion-icon>
+        Ajouter au panier
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
+
